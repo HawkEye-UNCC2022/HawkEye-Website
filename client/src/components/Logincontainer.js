@@ -1,6 +1,8 @@
 import React from "react";
 import FluidInput from "./Fluidinput";
 import Button from "./Buttoncust";
+import Logo from "./hawkeye.png";
+
 
 
 class LoginContainer extends React.Component {
@@ -11,6 +13,7 @@ class LoginContainer extends React.Component {
       };
       return (
         <div className="login-container">
+          <img src={Logo} alt="logo"/>
           <div className="title">
            Login
           </div>
