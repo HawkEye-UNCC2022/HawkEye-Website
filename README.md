@@ -10,3 +10,4 @@
 
 ## Contact Us
 ### Richard Ormiston { Devops & Project Management } - rormisto@uncc.edu
+### Logan Hasty { Front End Specialist } - dhasty1@uncc.edu
