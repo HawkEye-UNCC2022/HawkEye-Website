@@ -173,3 +173,12 @@ body {
 .fluid-input--open .fluid-input-label {
   transform: translateY(-40px);
 }
+#card-row{
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  }
+  
+Card {
+  margin-right:30px!important;
+}
