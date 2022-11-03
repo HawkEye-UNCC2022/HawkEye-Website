@@ -25,7 +25,6 @@ function Jumps() {
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Fitness')} style={{ marginRight: '0.25rem' }}>Fitness</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Marksmanship')} style={{ marginRight: '0.25rem' }}>Marksmanship</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Training')} style={{ marginRight: '0.25rem' }}>Training</Button>
-                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/IssuedGear')} style={{ marginRight: '0.25rem' }}>Issued Gear</Button>
                         </div>
                     </div>
                 </div>
@@ -33,11 +32,11 @@ function Jumps() {
                     <div class="row">
                         <div class="mt-4 text-center" id="card-row">
                             <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                                <Card.Header>Jump Count</Card.Header>
+                                <Card.Header>Example Header</Card.Header>
                                 <Card.Body>
-                                    <Card.Title>12</Card.Title>
+                                    <Card.Title>Example Title</Card.Title>
                                     <Card.Text>
-                                        You have 2 jumps remaining.
+                                        Just an example of some text we can insert here.
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

@@ -17,7 +17,6 @@ function Training() {
                 <h1 class="text-center"><Image src={Icon} style={{ width: '4rem' }} />Hawkeye</h1>
                     <h3 class="text-center">Your centralized USAF data hub</h3>
                 </div>
-            </div>
                 <div class="container">
                     <div class="row">
                         <div class="mt-4 text-center">
@@ -26,7 +25,6 @@ function Training() {
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Fitness')} style={{ marginRight: '0.25rem' }}>Fitness</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Marksmanship')} style={{ marginRight: '0.25rem' }}>Marksmanship</Button>
                             <Button type="button" className="btn btn-primary" onClick={() => navigate('/Training')} style={{ marginRight: '0.25rem' }}>Training</Button>
-                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/IssuedGear')} style={{ marginRight: '0.25rem' }}>Issued Gear</Button>
                         </div>
                     </div>
                 </div>
@@ -91,7 +89,7 @@ function Training() {
                         </div>
                     </div>
                 </div>
-
+            </div>
         </>
     );
 }
