@@ -8,10 +8,6 @@
 - Express: localhost:5000
 - MongoDB: localhost:27017
 
-## Contact Us
-### Richard Ormiston { Devops & Project Management } - rormisto@uncc.edu
-### Logan Hasty { Front End Specialist } - dhasty1@uncc.edu
-
 ## To Start Locally:
 1. Open terminal window
 2. cd flask-server
@@ -21,3 +17,8 @@
 1. Open new terminal window
 2. cd client
 3. npm start
+
+
+## Contact Us
+### Richard Ormiston { Devops & Project Management } - rormisto@uncc.edu
+### Logan Hasty { Front End Specialist } - dhasty1@uncc.edu
