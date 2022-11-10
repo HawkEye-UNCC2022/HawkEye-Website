@@ -17,10 +17,10 @@
 
 
 ## To start development environment
-// 1. Download & install Docker & Docker Compose
-// 2. CD into top directory
-// 3. Run the following command: "docker-compose up"
-// 4. You are now running all services, they are accessable at:
+ 1. Download & install Docker & Docker Compose
+ 2. CD into top directory
+ 3. Run the following command: "docker-compose up"
+ 4. You are now running all services, they are accessable at:
 - React: localhost:3000
 - Express: localhost:5000
 - MongoDB: localhost:27017
