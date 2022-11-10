@@ -6,10 +6,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import Icon from '../assets/hawkeye.png'
 
+function isNull(value){
+    return value === null ? 'N/A' : value
+}
 
 function Personal() {
     const navigate = useNavigate();
 
+    // Logic to fetch the roster
     const [initialData, setInitialData] = useState([{}]);
 
     useEffect(() => {
@@ -26,8 +30,10 @@ function Personal() {
 
     return (
         <>
-            
-         <p>{initialData[0].SSAN}</p>
+        {/* 
+            Ex: Access JSON key value using this method:
+            {initialData[0].SSAN} 
+         */}
             <div class="container-fluid">
                 <div class="mt-2 jumbotron">
                     <h1 class="text-center"><Image src={Icon} style={{ width: '4rem' }} />Hawkeye</h1>
@@ -50,45 +56,375 @@ function Personal() {
                 <div class="row" >
                     <div class="mt-4 text-center" id="card-row" >
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>Name</Card.Header>
+                            <Card.Header>NAME</Card.Header>
                             <Card.Body>
-                                <Card.Title>{initialData[0].FULL_NAME}</Card.Title>
+                                <Card.Title>{isNull(initialData[0].FULL_NAME)}</Card.Title>
                             </Card.Body>
                         </Card>
                         <br />
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>Rank</Card.Header>
+                            <Card.Header>SSAN</Card.Header>
                             <Card.Body>
-                                <Card.Title>{initialData[0].GRADE}</Card.Title>
+                                <Card.Title>{isNull(initialData[0].SSAN)}</Card.Title>
                             </Card.Body>
                         </Card>
                         <br />
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>Home Address</Card.Header>
+                            <Card.Header>GRADE</Card.Header>
                             <Card.Body>
-                                <Card.Title>{initialData[0].HOME_ADDRESS}</Card.Title>
+                                <Card.Title>{isNull(initialData[0].GRADE)}</Card.Title>
                             </Card.Body>
                         </Card>
                     </div>
                 </div>
             </div>
             <div class="container">
-                <div class="row">
+                <div class="row" >
                     <div class="mt-4 text-center" id="card-row" >
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>Marital Status</Card.Header>
+                            <Card.Header>ASSIGNED PAS</Card.Header>
                             <Card.Body>
-                                <Card.Title>{initialData[0].MARITAL_STATUS}</Card.Title>
+                                <Card.Title>{isNull(initialData[0].ASSIGNED_PAS)}</Card.Title>
                             </Card.Body>
                         </Card>
                         <br />
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>Supervisor</Card.Header>
+                            <Card.Header>ASSIGNED_PAS_CLEARTEXT</Card.Header>
                             <Card.Body>
-                                <Card.Title>{initialData[0].SUPV_NAME}</Card.Title>
+                                <Card.Title>{isNull(initialData[0].ASSIGNED_PAS_CLEARTEXT)}</Card.Title>
                             </Card.Body>
                         </Card>
                         <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DUTY_TITLE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DUTY_TITLE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>ASSIGNED PAS</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].ASSIGNED_PAS)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>ASSIGNED_PAS_CLEARTEXT</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].ASSIGNED_PAS_CLEARTEXT)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DUTY_TITLE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DUTY_TITLE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DOR</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DOR)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DAFSC</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DAFSC)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>CAFSC</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].CAFSC)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>PAFSC</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].PAFSC)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>2AFSC</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0]["2AFSC"])}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>3AFSC</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0]["3AFSC"])}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>4AFSC</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0]["4AFSC"])}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DATE_ARRIVED_STATION</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DATE_ARRIVED_STATION)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DUTY_PHONE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DUTY_PHONE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>TAFMSD</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].TAFMSD)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DOE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DOE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>HOME_ADDRESS</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].HOME_ADDRESS)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>HOME_CITY</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].HOME_CITY)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>HOME_STATE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].HOME_STATE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>HOME_ZIP_CODE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].HOME_ZIP_CODE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>SUPV_NAME</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].SUPV_NAME)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>PROJ_EVAL_CLOSE_DATE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].PROJ_EVAL_CLOSE_DATE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>RNLTD</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].RNLTD)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>GAINING_PAS</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].GAINING_PAS)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>GAINING_PAS_CLEARTEXT</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].GAINING_PAS_CLEARTEXT)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>HOME_PHONE_NUMBER</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].HOME_PHONE_NUMBER)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEROS</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEROS)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEPLOY_PHYS_STATUS</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEPLOY_PHYS_STATUS)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEPLOY_PHYS_STATUS_CLEARTEXT</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEPLOY_PHYS_STATUS_CLEARTEXT)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEPLOY_PHYS_STOP_DATE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEPLOY_PHYS_STOP_DATE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEPLOY_TIME_STATUS</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEPLOY_TIME_STATUS)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEPLOY_TIME_STATUS_CLEARTEXT</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEPLOY_TIME_STATUS_CLEARTEXT)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>DEPLOY_TIME_STOP_DATE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].DEPLOY_TIME_STOP_DATE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>AVAILABILITY_CODE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].AVAILABILITY_CODE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>AVAILABILITY_CODE_CLEARTEXT</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].AVAILABILITY_CODE_CLEARTEXT)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>AVAILABILITY_DATE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].AVAILABILITY_DATE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>LIMITATION_CODE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].LIMITATION_CODE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                        <br />
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>LIMITATION_END_DATE</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].LIMITATION_END_DATE)}</Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" >
+                    <div class="mt-4 text-center" id="card-row" >
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                            <Card.Header>SEC_CLR</Card.Header>
+                            <Card.Body>
+                                <Card.Title>{isNull(initialData[0].SEC_CLR)}</Card.Title>
+                            </Card.Body>
+                        </Card>
                     </div>
                 </div>
             </div>
