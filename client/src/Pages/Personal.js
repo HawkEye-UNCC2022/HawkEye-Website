@@ -13,21 +13,22 @@ function Personal() {
     const [initialData, setInitialData] = useState([{}]);
 
     useEffect(() => {
-        fetch("/alpha/111111111")
-        .then(
-           response => response.json())
-        .then(
-            data => {
-                setInitialData(data)
-                console.log(data)
-            }
-        )
-    },[]);
+        fetch("/alpha/111111112")
+            .then(
+                response => response.json())
+            .then(
+                data => {
+                    setInitialData(data)
+                    console.log(data)
+                }
+            )
+    }, []);
 
     return (
+
         <>
-            
-         <p>{initialData[0].SSAN}</p>
+
+            <p>{initialData[0].SSAN}</p>
             <div class="container-fluid">
                 <div class="mt-2 jumbotron">
                     <h1 class="text-center"><Image src={Icon} style={{ width: '4rem' }} />Hawkeye</h1>
@@ -42,6 +43,7 @@ function Personal() {
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Marksmanship')} style={{ marginRight: '0.25rem' }}>Marksmanship</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Training')} style={{ marginRight: '0.25rem' }}>Training</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/IssuedGear')} style={{ marginRight: '0.25rem' }}>Issued Gear</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Upload')} style={{ marginRight: '0.25rem' }}>Upload</Button>
                         </div>
                     </div>
                 </div>
@@ -92,6 +94,7 @@ function Personal() {
                     </div>
                 </div>
             </div>
+
         </>
     );
 }

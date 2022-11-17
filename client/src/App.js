@@ -7,6 +7,7 @@ import Jumps from './Pages/Jumps';
 import Training from './Pages/Training';
 import PageNotFound from './Pages/PageNotFound';
 import Marksmanship from './Pages/Marksmanship';
+import Upload from './Pages/Upload';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/fitness" element={<Fitness/>} />
         <Route exact path="/training" element={<Training/>} />
         <Route exact path="/marksmanship" element={<Marksmanship/>} />
+        <Route exact path="/upload" element={<Upload/>} />
         <Route exact path="*" element={<PageNotFound/>} />
       </Routes>
     </BrowserRouter>
