@@ -5,6 +5,8 @@ import Card from 'react-bootstrap/Card';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import Icon from '../assets/hawkeye.png'
+import Downloader from "../components/Download";
+
 
 
 function Personal() {
@@ -44,6 +46,7 @@ function Personal() {
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Training')} style={{ marginRight: '0.25rem' }}>Training</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/IssuedGear')} style={{ marginRight: '0.25rem' }}>Issued Gear</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Upload')} style={{ marginRight: '0.25rem' }}>Upload</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => Downloader(initialData[0])} style={{ marginRight: '0.25rem' }}>Download</Button>
                         </div>
                     </div>
                 </div>
