@@ -5,6 +5,8 @@ import Card from 'react-bootstrap/Card';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import Icon from '../assets/hawkeye.png'
+import Downloader from "../components/Download";
+import { GetSSAN } from "../helper";
 
 function isNull(value){
     return value === null ? 'N/A' : value
@@ -12,21 +14,20 @@ function isNull(value){
 
 function Personal() {
     const navigate = useNavigate();
-
+    const user = GetSSAN();
     // Logic to fetch the roster
     const [initialData, setInitialData] = useState([{}]);
 
     useEffect(() => {
-        fetch("/alpha/111111111")
+        fetch("/alpha/" + user)
         .then(
            response => response.json())
         .then(
             data => {
                 setInitialData(data)
-                console.log(data)
             }
         )
-    },[]);
+    }, []);
 
     return (
         <>
@@ -43,11 +44,14 @@ function Personal() {
                     <div class="row">
                         <div class="mt-4 text-center">
                             <Button type="button" className="btn btn-primary" onClick={() => navigate('/Personal')} style={{ marginRight: '0.25rem' }}>Personal</Button>
-                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Jumps')} style={{ marginRight: '0.25rem' }}>Jumps</Button>
-                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Fitness')} style={{ marginRight: '0.25rem' }}>Fitness</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/AEF')} style={{ marginRight: '0.25rem' }}>AEF</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Projected')} style={{ marginRight: '0.25rem' }}>Projected</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Marksmanship')} style={{ marginRight: '0.25rem' }}>Marksmanship</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Training')} style={{ marginRight: '0.25rem' }}>Training</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/IssuedGear')} style={{ marginRight: '0.25rem' }}>Issued Gear</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Upload')} style={{ marginRight: '0.25rem' }}>Upload</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => Downloader(initialData[0])} style={{ marginRight: '0.25rem' }}>Download</Button>
+
                         </div>
                     </div>
                 </div>
@@ -56,7 +60,7 @@ function Personal() {
                 <div class="row" >
                     <div class="mt-4 text-center" id="card-row" >
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>NAME</Card.Header>
+                            <Card.Header>FULL_NAME</Card.Header>
                             <Card.Body>
                                 <Card.Title>{isNull(initialData[0].FULL_NAME)}</Card.Title>
                             </Card.Body>
@@ -89,33 +93,7 @@ function Personal() {
                         </Card>
                         <br />
                         <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>ASSIGNED_PAS_CLEARTEXT</Card.Header>
-                            <Card.Body>
-                                <Card.Title>{isNull(initialData[0].ASSIGNED_PAS_CLEARTEXT)}</Card.Title>
-                            </Card.Body>
-                        </Card>
-                        <br />
-                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>DUTY_TITLE</Card.Header>
-                            <Card.Body>
-                                <Card.Title>{isNull(initialData[0].DUTY_TITLE)}</Card.Title>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row" >
-                    <div class="mt-4 text-center" id="card-row" >
-                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>ASSIGNED PAS</Card.Header>
-                            <Card.Body>
-                                <Card.Title>{isNull(initialData[0].ASSIGNED_PAS)}</Card.Title>
-                            </Card.Body>
-                        </Card>
-                        <br />
-                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
-                            <Card.Header>ASSIGNED_PAS_CLEARTEXT</Card.Header>
+                            <Card.Header>ASSIGNED PAS CLEARTEXT</Card.Header>
                             <Card.Body>
                                 <Card.Title>{isNull(initialData[0].ASSIGNED_PAS_CLEARTEXT)}</Card.Title>
                             </Card.Body>
@@ -419,7 +397,7 @@ function Personal() {
             <div class="container">
                 <div class="row" >
                     <div class="mt-4 text-center" id="card-row" >
-                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem' }}>
+                        <Card border="primary" style={{ width: '14rem', marginRight: '1rem', marginBottom: '1rem' }}>
                             <Card.Header>SEC_CLR</Card.Header>
                             <Card.Body>
                                 <Card.Title>{isNull(initialData[0].SEC_CLR)}</Card.Title>

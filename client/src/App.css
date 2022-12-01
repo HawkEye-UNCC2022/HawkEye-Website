@@ -29,6 +29,7 @@ canvas {
   user-select: none;
   list-style: none;
   position: relative;
+  text-align: center;
 }
 
 .html,
@@ -92,7 +93,7 @@ body {
   background-color: #007aff;
 }
 
-.fluid-input {
+.fluid-input, input {
   width: 80%;
   height: 50px;
   max-width: 450px;
@@ -159,6 +160,12 @@ body {
   pointer-events: none;
   transition: transform 0.2s ease-in-out, font-size 0.2s 0.15s ease-in-out;
   will-change: transform, font-size;
+}
+.login-input{
+  text-align: left;
+  color:#007aff;
+  border-radius: 0%;
+  margin-left: 2px;
 }
 .fluid-input--focus .fluid-input-holder {
   box-shadow: 0px 5px 20px 0px rgba(0, 12, 47, 0.3);
