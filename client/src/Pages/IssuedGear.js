@@ -22,11 +22,12 @@ function IssuedGear() {
                     <div class="row">
                         <div class="mt-4 text-center">
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Personal')} style={{ marginRight: '0.25rem' }}>Personal</Button>
-                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Jumps')} style={{ marginRight: '0.25rem' }}>Jumps</Button>
-                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Fitness')} style={{ marginRight: '0.25rem' }}>Fitness</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/AEF')} style={{ marginRight: '0.25rem' }}>AEF</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Projected')} style={{ marginRight: '0.25rem' }}>Projected</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Marksmanship')} style={{ marginRight: '0.25rem' }}>Marksmanship</Button>
                             <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Training')} style={{ marginRight: '0.25rem' }}>Training</Button>
                             <Button type="button" className="btn btn-primary" onClick={() => navigate('/IssuedGear')} style={{ marginRight: '0.25rem' }}>Issued Gear</Button>
+                            <Button type="button" className="btn btn-secondary" onClick={() => navigate('/Upload')} style={{ marginRight: '0.25rem' }}>Upload</Button>
                         </div>
                     </div>
                 </div>

@@ -1,23 +1,74 @@
 import React from "react";
-import FluidInput from "../components/Fluidinput";
 import Logo from "../assets/hawkeye.png";
+import { SetSSAN } from "../helper";
 import { useNavigate } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
 
-export const Login = () => {
-    const style = {
-        margin: "15px 0"
-      };
+
+export const LoginForm = () => {
+    const userRef = useRef();
+    const errRef = useRef();
+
+    const [user, setUser] = useState('');
+    const [pwd, setPwd] = useState('');
+    const [errMsg, setErrMsg] = useState('');
+    const [success, setSuccess] = useState(false);
+
     const navigate = useNavigate();
 
+    useEffect(() => {
+        userRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+        setErrMsg('');
+    }, [user, pwd])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(user, pwd);
+        SetSSAN(user);
+        setUser('');
+        setPwd('');
+        setSuccess(true);
+    }
+
     return (
-        <div className="login-container">
-            <img src={Logo} alt="logo"/>
-            <div className="title">Login</div>
-            <FluidInput type="text" label="name" id="name" style={style} />
-            <FluidInput type="password" label="password" id="password" style={style} />
-            <button class="login-button" onClick={ ()=> navigate('/Personal')} >Log In</button>
-        </div>
-    );
+        <>
+        {success ? (navigate('/Personal')) : (
+            <section className="login-container">
+                <p ref={errRef} className={errMsg ? "errMsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                <img src={Logo} alt="logo" />
+                <div className="title">Login</div>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        class="login-input"
+                        type="text"
+                        id="username"
+                        placeholder="User"
+                        ref={userRef}
+                        autoComplete="off"
+                        onChange={(e) => setUser(e.target.value)}
+                        value={user}
+                        required
+                    />
+                    <input
+                        class="login-input"
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        onChange={(e) => setPwd(e.target.value)}
+                        value={pwd}
+                        required
+                    />
+                    <button class="login-button">Sign In</button>
+                </form>
+            </section>
+        )}
+        </>
+    )
 }
 
-export default Login
+
+
+export default LoginForm
