@@ -10,7 +10,7 @@
 2. cd client
 3. npm start
 
-**If anything is not working properly, you might need to install dependencies within the local instance. To accomplish this, just run __npm install__**
+**If anything is not working properly, you might need to install dependencies within the local instance. To accomplish this, just run _npm install_**
 
 
 ## Contact Us
