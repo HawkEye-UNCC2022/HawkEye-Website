@@ -2,13 +2,13 @@
 
 ## To Run Locally:
 1. Open terminal window
-2. cd flask-server
-3. source venv/bin/activate
-4. python3 server.py
+- cd flask-server
+- source venv/bin/activate
+- python3 server.py
 
-1. Open new terminal window
-2. cd client
-3. npm start
+2. Open new terminal window
+- cd client
+- npm start
 
 **If anything is not working properly, you might need to install dependencies within the local instance. To accomplish this, just run _npm install_**
 
