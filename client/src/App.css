@@ -5,6 +5,7 @@ ul,
 li,
 a,
 button,
+#dropdown,
 input,
 h1,
 h2,
@@ -49,6 +50,14 @@ body {
   text-transform: capitalize;
   cursor: pointer;
 }
+#dropdown, #csv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  cursor: pointer;
+}
+
 .button:hover, .button:focus {
   transition: 0.15s ease-in-out;
 }
