@@ -42,7 +42,7 @@ export const LoginForm = () => {
                 <div className="title">Login</div>
                 <form onSubmit={handleSubmit}>
                     <input
-                        class="login-input"
+                        className="login-input"
                         type="text"
                         id="username"
                         placeholder="User"
@@ -53,7 +53,7 @@ export const LoginForm = () => {
                         required
                     />
                     <input
-                        class="login-input"
+                        className="login-input"
                         type="password"
                         id="password"
                         placeholder="Password"
@@ -61,7 +61,7 @@ export const LoginForm = () => {
                         value={pwd}
                         required
                     />
-                    <button class="login-button">Sign In</button>
+                    <button className="login-button">Sign In</button>
                 </form>
             </section>
         )}
